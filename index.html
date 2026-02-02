@@ -42,7 +42,7 @@
             right: 0;
             bottom: 0;
             background-color: #2196f3;
-            transition: 0.4s;
+            transition: background-color 0.4s;
             z-index: 0;
             overflow: hidden;
         }
@@ -55,7 +55,10 @@
             left: 4px;
             bottom: 4px;
             background-color: yellow;
-            transition: 0.4s;
+            /* ปรับปรุง Transition ให้รองรับการทำงานบนทุกตำแหน่งการแสดงผล */
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.4s;
+            transform: translateX(0) rotate(0deg);
+            will-change: transform;
         }
 
         #theme-input:checked + .slider {
@@ -63,9 +66,9 @@
         }
 
         #theme-input:checked + .slider .sun-moon {
-            transform: translateX(26px);
+            /* รวมการเคลื่อนที่และการหมุน 360 องศาให้สมูทขึ้น */
+            transform: translateX(26px) rotate(360deg);
             background-color: white;
-            animation: rotate-center 0.6s ease-in-out both;
         }
 
         .moon-dot {
