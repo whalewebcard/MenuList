@@ -275,6 +275,21 @@
     </div>
 
     <script>
+        // Preload Images for better caching and smooth transitions
+        const preloadAssets = () => {
+            const images = [
+                "https://i.ibb.co/1YWShvt2/2.png",
+                "https://i.ibb.co/B2Pb4J82/unnamed.jpg",
+                "https://i.ibb.co/8Ld5Gjqs/line.png",
+                "https://i.ibb.co/Rk0qkC3g/dicdord.png"
+            ];
+            images.forEach(src => {
+                const img = new Image();
+                img.src = src;
+            });
+        };
+        preloadAssets();
+
         // Initialize Lucide Icons
         lucide.createIcons();
 
