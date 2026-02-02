@@ -153,124 +153,130 @@
         <div id="bg-circle-2" class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full blur-[120px] opacity-20 bg-amber-900 transition-colors duration-700"></div>
     </div>
 
-    <!-- Theme Toggle Button - Adjusted for better mobile balance -->
-    <div class="fixed top-6 right-6 sm:top-8 sm:right-10 z-50">
-        <label class="switch scale-[0.85] sm:scale-100 transform origin-top-right transition-transform duration-300">
-            <input id="theme-input" type="checkbox" checked onchange="toggleTheme()">
-            <div class="slider round">
-                <div class="sun-moon">
-                    <svg id="moon-dot-1" class="moon-dot" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50"></circle></svg>
-                    <svg id="moon-dot-2" class="moon-dot" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50"></circle></svg>
-                    <svg id="moon-dot-3" class="moon-dot" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50"></circle></svg>
-                    <svg id="light-ray-1" viewBox="0 0 100 100" style="left: -8px; top: -8px; position: absolute; width: 43px; height: 43px; fill: white; opacity: 10%;"><circle cx="50" cy="50" r="50"></circle></svg>
-                    <svg id="light-ray-2" viewBox="0 0 100 100" style="left: -50%; top: -50%; position: absolute; width: 55px; height: 55px; fill: white; opacity: 10%;"><circle cx="50" cy="50" r="50"></circle></svg>
-                    <svg id="light-ray-3" viewBox="0 0 100 100" style="left: -18px; top: -18px; position: absolute; width: 60px; height: 60px; fill: white; opacity: 10%;"><circle cx="50" cy="50" r="50"></circle></svg>
-                    <svg id="cloud-1" class="cloud-dark" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50"></circle></svg>
-                    <svg id="cloud-2" class="cloud-dark" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50"></circle></svg>
-                    <svg id="cloud-3" class="cloud-dark" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50"></circle></svg>
-                    <svg id="cloud-4" class="cloud-light" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50"></circle></svg>
-                    <svg id="cloud-5" class="cloud-light" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50"></circle></svg>
-                    <svg id="cloud-6" class="cloud-light" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50"></circle></svg>
-                </div>
-                <div class="stars">
-                    <svg id="star-1" class="star" viewBox="0 0 20 20"><path d="M 0 10 C 10 10,10 10 ,0 10 C 10 10 , 10 10 , 10 20 C 10 10 , 10 10 , 20 10 C 10 10 , 10 10 , 10 0 C 10 10,10 10 ,0 10 Z"></path></svg>
-                    <svg id="star-2" class="star" viewBox="0 0 20 20"><path d="M 0 10 C 10 10,10 10 ,0 10 C 10 10 , 10 10 , 10 20 C 10 10 , 10 10 , 20 10 C 10 10 , 10 10 , 10 0 C 10 10,10 10 ,0 10 Z"></path></svg>
-                    <svg id="star-3" class="star" viewBox="0 0 20 20"><path d="M 0 10 C 10 10,10 10 ,0 10 C 10 10 , 10 10 , 10 20 C 10 10 , 10 10 , 20 10 C 10 10 , 10 10 , 10 0 C 10 10,10 10 ,0 10 Z"></path></svg>
-                    <svg id="star-4" class="star" viewBox="0 0 20 20"><path d="M 0 10 C 10 10,10 10 ,0 10 C 10 10 , 10 10 , 10 20 C 10 10 , 10 10 , 20 10 C 10 10 , 10 10 , 10 0 C 10 10,10 10 ,0 10 Z"></path></svg>
-                </div>
-            </div>
-        </label>
-    </div>
-
     <!-- Main Content Container -->
     <div class="min-h-screen flex items-center justify-center p-4">
-        <!-- แก้ไขความหนาของขอบและเงาของ Main Card -->
-        <div id="main-card" class="relative w-full max-w-md z-10 backdrop-blur-2xl rounded-[2.5rem] border-[1.5px] p-8 transition-all duration-500 bg-white/[0.03] border-[#C5A059]/40 shadow-[0_0_50px_-12px_rgba(197,160,89,0.2)]">
+        
+        <!-- Wrapper for Correct Relative Positioning on Mobile -->
+        <div class="relative w-full max-w-md">
             
-            <!-- Logo & Header Section -->
-            <div class="flex flex-col items-center mb-10">
-                <div id="logo-container" class="group relative w-28 h-28 mb-6 p-0.5 rounded-full border-2 transition-all duration-500 overflow-hidden border-[#C5A059]/50 bg-black shadow-[0_0_30px_rgba(197,160,89,0.2)]">
-                    <img 
-                        id="main-logo"
-                        src="https://i.ibb.co/1YWShvt2/2.png" 
-                        alt="Whale Logo" 
-                        class="w-full h-full object-cover rounded-full transition-transform duration-700 group-hover:scale-110"
-                    >
-                </div>
-                
-                <div class="text-center">
-                    <h1 id="title" class="text-2xl font-bold tracking-tight mb-2 transition-colors duration-500 text-white">
-                        Whale Web Card
-                    </h1>
-                    <p id="subtitle" class="text-[13px] mb-6 font-light tracking-wide leading-relaxed mx-auto transition-colors duration-500 text-white/60">
-                        สร้างความทรงจำดีๆ ผ่านเว็บการ์ดสุดน่ารัก
-                    </p>
-                </div>
+            <!-- Theme Toggle Button -->
+            <!-- Mobile: Absolute in card wrapper | PC: Fixed in browser top-right -->
+            <div class="absolute top-5 right-5 sm:fixed sm:top-8 sm:right-8 z-50">
+                <label class="switch scale-[0.75] sm:scale-100 transform origin-top-right transition-transform duration-300">
+                    <input id="theme-input" type="checkbox" checked onchange="toggleTheme()">
+                    <div class="slider round">
+                        <div class="sun-moon">
+                            <svg id="moon-dot-1" class="moon-dot" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50"></circle></svg>
+                            <svg id="moon-dot-2" class="moon-dot" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50"></circle></svg>
+                            <svg id="moon-dot-3" class="moon-dot" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50"></circle></svg>
+                            <svg id="light-ray-1" viewBox="0 0 100 100" style="left: -8px; top: -8px; position: absolute; width: 43px; height: 43px; fill: white; opacity: 10%;"><circle cx="50" cy="50" r="50"></circle></svg>
+                            <svg id="light-ray-2" viewBox="0 0 100 100" style="left: -50%; top: -50%; position: absolute; width: 55px; height: 55px; fill: white; opacity: 10%;"><circle cx="50" cy="50" r="50"></circle></svg>
+                            <svg id="light-ray-3" viewBox="0 0 100 100" style="left: -18px; top: -18px; position: absolute; width: 60px; height: 60px; fill: white; opacity: 10%;"><circle cx="50" cy="50" r="50"></circle></svg>
+                            <svg id="cloud-1" class="cloud-dark" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50"></circle></svg>
+                            <svg id="cloud-2" class="cloud-dark" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50"></circle></svg>
+                            <svg id="cloud-3" class="cloud-dark" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50"></circle></svg>
+                            <svg id="cloud-4" class="cloud-light" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50"></circle></svg>
+                            <svg id="cloud-5" class="cloud-light" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50"></circle></svg>
+                            <svg id="cloud-6" class="cloud-light" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50"></circle></svg>
+                        </div>
+                        <div class="stars">
+                            <svg id="star-1" class="star" viewBox="0 0 20 20"><path d="M 0 10 C 10 10,10 10 ,0 10 C 10 10 , 10 10 , 10 20 C 10 10 , 10 10 , 20 10 C 10 10 , 10 10 , 10 0 C 10 10,10 10 ,0 10 Z"></path></svg>
+                            <svg id="star-2" class="star" viewBox="0 0 20 20"><path d="M 0 10 C 10 10,10 10 ,0 10 C 10 10 , 10 10 , 10 20 C 10 10 , 10 10 , 20 10 C 10 10 , 10 10 , 10 0 C 10 10,10 10 ,0 10 Z"></path></svg>
+                            <svg id="star-3" class="star" viewBox="0 0 20 20"><path d="M 0 10 C 10 10,10 10 ,0 10 C 10 10 , 10 10 , 10 20 C 10 10 , 10 10 , 20 10 C 10 10 , 10 10 , 10 0 C 10 10,10 10 ,0 10 Z"></path></svg>
+                            <svg id="star-4" class="star" viewBox="0 0 20 20"><path d="M 0 10 C 10 10,10 10 ,0 10 C 10 10 , 10 10 , 10 20 C 10 10 , 10 10 , 20 10 C 10 10 , 10 10 , 10 0 C 10 10,10 10 ,0 10 Z"></path></svg>
+                        </div>
+                    </div>
+                </label>
             </div>
 
-            <!-- Navigation Items -->
-            <nav id="menu-list" class="space-y-3.5">
-                <!-- เว็บไซต์หลัก -->
-                <a href="https://whalewebcard.github.io/WebCardService/" target="_blank" rel="noopener noreferrer" class="menu-item group flex items-center justify-between p-4 rounded-2xl border transition-all duration-300 transform hover:-translate-y-1 active:scale-95 bg-white/[0.05] border-white/[0.05] text-white hover:bg-[#C5A059]/10 hover:border-[#C5A059]/40">
-                    <div class="flex items-center gap-4">
-                        <div class="icon-box w-10 h-10 flex items-center justify-center rounded-xl transition-all duration-300 group-hover:scale-110 bg-white/5 text-[#C5A059]">
-                            <i data-lucide="globe" class="w-5 h-5"></i>
-                        </div>
-                        <span class="text-[15px] font-medium tracking-wide transition-all group-hover:translate-x-1">เว็บไซต์หลัก</span>
+            <!-- Main Card Container -->
+            <div id="main-card" class="relative w-full z-10 backdrop-blur-2xl rounded-[2.5rem] border-[1.5px] p-8 transition-all duration-500 bg-white/[0.03] border-[#C5A059]/40 shadow-[0_0_50px_-12px_rgba(197,160,89,0.2)]">
+                
+                <!-- Logo & Header Section -->
+                <div class="flex flex-col items-center mb-10">
+                    <div id="logo-container" class="group relative w-28 h-28 mb-6 p-0.5 rounded-full border-2 transition-all duration-500 overflow-hidden border-[#C5A059]/50 bg-black shadow-[0_0_30px_rgba(197,160,89,0.2)]">
+                        <img 
+                            id="main-logo"
+                            src="https://i.ibb.co/1YWShvt2/2.png" 
+                            alt="Whale Logo" 
+                            class="w-full h-full object-cover rounded-full transition-transform duration-700 group-hover:scale-110"
+                        >
                     </div>
-                    <i data-lucide="chevron-right" class="opacity-0 group-hover:opacity-100 transition-all transform group-hover:translate-x-1 w-3.5 h-3.5"></i>
-                </a>
-
-                <!-- ตัวอย่างเว็บไซต์ -->
-                <a href="https://whalewebcard.github.io/example/" target="_blank" rel="noopener noreferrer" class="menu-item group flex items-center justify-between p-4 rounded-2xl border transition-all duration-300 transform hover:-translate-y-1 active:scale-95 bg-white/[0.05] border-white/[0.05] text-white hover:bg-[#C5A059]/10 hover:border-[#C5A059]/40">
-                    <div class="flex items-center gap-4">
-                        <div class="icon-box w-10 h-10 flex items-center justify-center rounded-xl transition-all duration-300 group-hover:scale-110 bg-white/5 text-[#C5A059]">
-                            <i data-lucide="layout" class="w-5 h-5"></i>
-                        </div>
-                        <span class="text-[15px] font-medium tracking-wide transition-all group-hover:translate-x-1">ตัวอย่างเว็บไซต์</span>
+                    
+                    <div class="text-center">
+                        <h1 id="title" class="text-2xl font-bold tracking-tight mb-2 transition-colors duration-500 text-white">
+                            Whale Web Card
+                        </h1>
+                        <p id="subtitle" class="text-[13px] mb-6 font-light tracking-wide leading-relaxed mx-auto transition-colors duration-500 text-white/60">
+                            สร้างความทรงจำดีๆ ผ่านเว็บการ์ดสุดน่ารัก
+                        </p>
                     </div>
-                    <i data-lucide="chevron-right" class="opacity-0 group-hover:opacity-100 transition-all transform group-hover:translate-x-1 w-3.5 h-3.5"></i>
-                </a>
+                </div>
 
-                <!-- วิธีการสั่งซื้อสินค้า -->
-                <a href="https://whalewebcard.github.io/HowtoOrder/" target="_blank" rel="noopener noreferrer" class="menu-item group flex items-center justify-between p-4 rounded-2xl border transition-all duration-300 transform hover:-translate-y-1 active:scale-95 bg-white/[0.05] border-white/[0.05] text-white hover:bg-[#C5A059]/10 hover:border-[#C5A059]/40">
-                    <div class="flex items-center gap-4">
-                        <div class="icon-box w-10 h-10 flex items-center justify-center rounded-xl transition-all duration-300 group-hover:scale-110 bg-white/5 text-[#C5A059]">
-                            <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                <!-- Navigation Items -->
+                <nav id="menu-list" class="space-y-3.5">
+                    <!-- เว็บไซต์หลัก -->
+                    <a href="https://whalewebcard.github.io/WebCardService/" target="_blank" rel="noopener noreferrer" class="menu-item group flex items-center justify-between p-4 rounded-2xl border transition-all duration-300 transform hover:-translate-y-1 active:scale-95 bg-white/[0.05] border-white/[0.05] text-white hover:bg-[#C5A059]/10 hover:border-[#C5A059]/40">
+                        <div class="flex items-center gap-4">
+                            <div class="icon-box w-10 h-10 flex items-center justify-center rounded-xl transition-all duration-300 group-hover:scale-110 bg-white/5 text-[#C5A059]">
+                                <i data-lucide="globe" class="w-5 h-5"></i>
+                            </div>
+                            <span class="text-[15px] font-medium tracking-wide transition-all group-hover:translate-x-1">เว็บไซต์หลัก</span>
                         </div>
-                        <span class="text-[15px] font-medium tracking-wide transition-all group-hover:translate-x-1">วิธีการสั่งซื้อสินค้า</span>
-                    </div>
-                    <i data-lucide="chevron-right" class="opacity-0 group-hover:opacity-100 transition-all transform group-hover:translate-x-1 w-3.5 h-3.5"></i>
-                </a>
+                        <i data-lucide="chevron-right" class="opacity-0 group-hover:opacity-100 transition-all transform group-hover:translate-x-1 w-3.5 h-3.5"></i>
+                    </a>
 
-                <!-- Line Official -->
-                <a href="https://line.me/ti/p/@749blbpk" target="_blank" rel="noopener noreferrer" class="menu-item group flex items-center justify-between p-4 rounded-2xl border transition-all duration-300 transform hover:-translate-y-1 active:scale-95 bg-white/[0.05] border-white/[0.05] text-white hover:bg-[#C5A059]/10 hover:border-[#C5A059]/40">
-                    <div class="flex items-center gap-4">
-                        <div class="icon-box w-10 h-10 flex items-center justify-center rounded-xl transition-all duration-300 group-hover:scale-110 bg-white/5 text-[#C5A059]">
-                            <!-- Line Icon Image -->
-                            <img id="line-icon" src="https://i.ibb.co/8Ld5Gjqs/line.png" alt="Line" class="w-5 h-5 object-contain rounded-sm">
+                    <!-- ตัวอย่างเว็บไซต์ -->
+                    <a href="https://whalewebcard.github.io/example/" target="_blank" rel="noopener noreferrer" class="menu-item group flex items-center justify-between p-4 rounded-2xl border transition-all duration-300 transform hover:-translate-y-1 active:scale-95 bg-white/[0.05] border-white/[0.05] text-white hover:bg-[#C5A059]/10 hover:border-[#C5A059]/40">
+                        <div class="flex items-center gap-4">
+                            <div class="icon-box w-10 h-10 flex items-center justify-center rounded-xl transition-all duration-300 group-hover:scale-110 bg-white/5 text-[#C5A059]">
+                                <i data-lucide="layout" class="w-5 h-5"></i>
+                            </div>
+                            <span class="text-[15px] font-medium tracking-wide transition-all group-hover:translate-x-1">ตัวอย่างเว็บไซต์</span>
                         </div>
-                        <span class="text-[15px] font-medium tracking-wide transition-all group-hover:translate-x-1">Line Official</span>
-                    </div>
-                    <i data-lucide="chevron-right" class="opacity-0 group-hover:opacity-100 transition-all transform group-hover:translate-x-1 w-3.5 h-3.5"></i>
-                </a>
+                        <i data-lucide="chevron-right" class="opacity-0 group-hover:opacity-100 transition-all transform group-hover:translate-x-1 w-3.5 h-3.5"></i>
+                    </a>
 
-                <!-- Discord -->
-                <a href="https://discord.gg/CBsZEVpjBN" target="_blank" rel="noopener noreferrer" class="menu-item group flex items-center justify-between p-4 rounded-2xl border transition-all duration-300 transform hover:-translate-y-1 active:scale-95 bg-white/[0.05] border-white/[0.05] text-white hover:bg-[#C5A059]/10 hover:border-[#C5A059]/40">
-                    <div class="flex items-center gap-4">
-                        <div class="icon-box w-10 h-10 flex items-center justify-center rounded-xl transition-all duration-300 group-hover:scale-110 bg-white/5 text-[#C5A059]">
-                            <!-- Discord Icon Image -->
-                            <img id="discord-icon" src="https://i.ibb.co/Rk0qkC3g/dicdord.png" alt="Discord" class="w-5 h-5 object-contain rounded-sm">
+                    <!-- วิธีการสั่งซื้อสินค้า -->
+                    <a href="https://whalewebcard.github.io/HowtoOrder/" target="_blank" rel="noopener noreferrer" class="menu-item group flex items-center justify-between p-4 rounded-2xl border transition-all duration-300 transform hover:-translate-y-1 active:scale-95 bg-white/[0.05] border-white/[0.05] text-white hover:bg-[#C5A059]/10 hover:border-[#C5A059]/40">
+                        <div class="flex items-center gap-4">
+                            <div class="icon-box w-10 h-10 flex items-center justify-center rounded-xl transition-all duration-300 group-hover:scale-110 bg-white/5 text-[#C5A059]">
+                                <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                            </div>
+                            <span class="text-[15px] font-medium tracking-wide transition-all group-hover:translate-x-1">วิธีการสั่งซื้อสินค้า</span>
                         </div>
-                        <span class="text-[15px] font-medium tracking-wide transition-all group-hover:translate-x-1">Discord</span>
-                    </div>
-                    <i data-lucide="chevron-right" class="opacity-0 group-hover:opacity-100 transition-all transform group-hover:translate-x-1 w-3.5 h-3.5"></i>
-                </a>
-            </nav>
+                        <i data-lucide="chevron-right" class="opacity-0 group-hover:opacity-100 transition-all transform group-hover:translate-x-1 w-3.5 h-3.5"></i>
+                    </a>
 
-            <footer id="footer" class="mt-12 text-center text-[9px] tracking-[0.25em] uppercase transition-colors duration-500 text-white/20 font-light">
-                &mdash; Premium Experience &mdash;
-            </footer>
+                    <!-- Line Official -->
+                    <a href="https://line.me/ti/p/@749blbpk" target="_blank" rel="noopener noreferrer" class="menu-item group flex items-center justify-between p-4 rounded-2xl border transition-all duration-300 transform hover:-translate-y-1 active:scale-95 bg-white/[0.05] border-white/[0.05] text-white hover:bg-[#C5A059]/10 hover:border-[#C5A059]/40">
+                        <div class="flex items-center gap-4">
+                            <div class="icon-box w-10 h-10 flex items-center justify-center rounded-xl transition-all duration-300 group-hover:scale-110 bg-white/5 text-[#C5A059]">
+                                <!-- Line Icon Image -->
+                                <img id="line-icon" src="https://i.ibb.co/8Ld5Gjqs/line.png" alt="Line" class="w-5 h-5 object-contain rounded-sm">
+                            </div>
+                            <span class="text-[15px] font-medium tracking-wide transition-all group-hover:translate-x-1">Line Official</span>
+                        </div>
+                        <i data-lucide="chevron-right" class="opacity-0 group-hover:opacity-100 transition-all transform group-hover:translate-x-1 w-3.5 h-3.5"></i>
+                    </a>
+
+                    <!-- Discord -->
+                    <a href="https://discord.gg/CBsZEVpjBN" target="_blank" rel="noopener noreferrer" class="menu-item group flex items-center justify-between p-4 rounded-2xl border transition-all duration-300 transform hover:-translate-y-1 active:scale-95 bg-white/[0.05] border-white/[0.05] text-white hover:bg-[#C5A059]/10 hover:border-[#C5A059]/40">
+                        <div class="flex items-center gap-4">
+                            <div class="icon-box w-10 h-10 flex items-center justify-center rounded-xl transition-all duration-300 group-hover:scale-110 bg-white/5 text-[#C5A059]">
+                                <!-- Discord Icon Image -->
+                                <img id="discord-icon" src="https://i.ibb.co/Rk0qkC3g/dicdord.png" alt="Discord" class="w-5 h-5 object-contain rounded-sm">
+                            </div>
+                            <span class="text-[15px] font-medium tracking-wide transition-all group-hover:translate-x-1">Discord</span>
+                        </div>
+                        <i data-lucide="chevron-right" class="opacity-0 group-hover:opacity-100 transition-all transform group-hover:translate-x-1 w-3.5 h-3.5"></i>
+                    </a>
+                </nav>
+
+                <footer id="footer" class="mt-12 text-center text-[9px] tracking-[0.25em] uppercase transition-colors duration-500 text-white/20 font-light">
+                    &mdash; Premium Experience &mdash;
+                </footer>
+            </div>
         </div>
     </div>
 
